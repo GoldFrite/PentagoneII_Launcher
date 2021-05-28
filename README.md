@@ -1,4 +1,6 @@
-![Pentagone II Logo](https://media.discordapp.net/attachments/831549927547994172/847894763473731594/PentagoneII-Logo-RVB.png) 
+![Pentagone II Logo](https://media.discordapp.net/attachments/831549927547994172/847894763473731594/PentagoneII-Logo-RVB.png)
+
+![Pentagone II Launcher](https://media.discordapp.net/attachments/762253192255766530/847921594113327164/unknown.png?width=843&height=473)
 
 ##   
 
