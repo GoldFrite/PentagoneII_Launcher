@@ -15,6 +15,19 @@
 * Slideshow background
 * Displaying server information
 
+
+### Dependencies :
+* Font Awesome (`npm install --save @fortawesome/fontawesome-free `)
+* Minecraft Launcher Core (`npm i  minecraft-launcher-core` - [documentation](https://github.com/Pierce01/MinecraftLauncher-core))
+* Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
+* Axios (`npm i axios`)
+* Request (`npm i request`)
+* HTTP (`npm i http`)
+
+### Dev Dependencises :
+* Electron (`npm i -D electron`)
+* Electron Builder (`npm i -D electron-builder`)
+
 The *package.json* is only for Windows! The macOS version is available [there](build/macos-package.json).
 
 This Launcher is based on another Launcher that I created, but this last one is not available on GitHub.
@@ -35,6 +48,19 @@ This Launcher is under *GNU AGPLv3* licence, so you can fork it for your own pro
 * Liens réseaux sociaux
 * Fond d'écran diaporama
 * Affichage des infosmations du serveur
+
+
+### Dépendences :
+* Font Awesome (`npm install --save @fortawesome/fontawesome-free `)
+* Minecraft Launcher Core (`npm i  minecraft-launcher-core` - [documentation](https://github.com/Pierce01/MinecraftLauncher-core))
+* Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
+* Axios (`npm i axios`)
+* Request (`npm i request`)
+* HTTP (`npm i http`)
+
+### Dépendences de dev :
+* Electron (`npm i -D electron`)
+* Electron Builder (`npm i -D electron-builder`)
 
 Le *package.json* est uniquement pour Windows ! Pour obtenir la version macOS, cliquez [ici](build/macos-package.json).
 
