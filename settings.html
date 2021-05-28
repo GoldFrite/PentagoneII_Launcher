@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style_settings_rules-ig.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body id="body" style="background-image: url('./assets/images/bg-01.png');">
+    <div>
+        <div class="header" style="text-align: left;">
+            <button id="backhome-button" class="small-button" style="margin: 20px;"><i class="fas fa-chevron-left"></i>
+                Sauvegarder - Retour</button>
+            <div class="header">
+                <h1 style="margin-top: 0px; margin-bottom: 0px; position: relative; z-index: 1; top: -20px;">
+                    Paramètres</h1>
+            </div>
+            <div class="body">
+                <div class="title-form">
+                    <p class="title"><b><i class="fas fa-memory"></i> Paramètres de mémoire vive</b></p>
+                    <div class="body-form">
+                        <p style="line-height: 25px; margin: 0px;" id="ram-info"><i
+                                class="fas fa-exclamation-triangle"></i> La RAM minimale doit toujours être strictement
+                            inférieure à la RAM maximale !</p>
+                        <p>RAM minimale
+                            <select class="ram-select" name="min-ram" id="min-ram">
+                                <option value="1000" id="min-1000">1,0 Go</option>
+                                <option value="1500" id="min-1500">1,5 Go</option>
+                                <option value="2000" id="min-2000">2,0 Go</option>
+                                <option value="2500" id="min-2500">2,5 Go</option>
+                                <option value="3000" id="min-3000">3,0 Go</option>
+                                <option value="3500" id="min-3500">3,5 Go</option>
+                                <option value="3500" id="min-3500">4,0 Go</option>
+                                <option value="3500" id="min-3500">4,5 Go</option>
+                                <option value="3500" id="min-3500">5,0 Go</option>
+                                <option value="3500" id="min-3500">5,5 Go</option>
+                                <option value="3500" id="min-3500">6,0 Go</option>
+                            </select>. RAM maximale
+                            <select class="ram-select" name="max-ram" id="max-ram">
+                                <option value="1500" id="max-1500">1,5 Go</option>
+                                <option value="2000" id="max-2000">2,0 Go</option>
+                                <option value="2500" id="max-2500">2,5 Go</option>
+                                <option value="3000" id="max-3000">3,0 Go</option>
+                                <option value="3500" id="max-3500">3,5 Go</option>
+                                <option value="4000" id="max-4000">4,0 Go</option>
+                                <option value="3500" id="max-3500">4,5 Go</option>
+                                <option value="3500" id="max-3500">5,0 Go</option>
+                                <option value="3500" id="max-3500">5,5 Go</option>
+                                <option value="3500" id="max-3500">6,5 Go</option>
+                            </select>.
+                        </p>
+                        <p>Il est conseillé de laisser 0,5 Go d'écart minimum entre les deux valeurs !</p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="title-form">
+                    <p class="title"><b><i class="fas fa-rocket"></i> Lancement du Jeu</b></p>
+                    <div class="body-form">
+                        <p class="body-text" style="margin-bottom: 14px;">Une fois le Jeu lancé, il
+                            est possible de conserver le launcher ouvert ou de le fermer automatiquement, afin
+                            d'avoir plus de performances, si vous possédez une petite configuration.</p>
+                        <p class="body-text" id="keep-open-zone">
+                            <input type="checkbox" class="keep-open" id="keep-open"><label for="keep-open"></label>
+                            Garder le Launcher ouvert durant l'exécution du Jeu
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header" style="text-align: left;">
+            <div class="header">
+                <h1
+                    style="padding-top: 60px; margin-bottom: 0px; position: relative; z-index: 1; top: -20px; margin-top: 10px">
+                    Configuration pour le Jeu</h1>
+            </div>
+            <div class="body">
+                <div class="title-form">
+                    <p class="title"><b><i class="fas fa-laptop"></i> Configuration minimale requise</b></p>
+                    <div class="body-form">
+                        <p style="line-height: 25px; margin: 0px;">
+                            <b>Système d'exploitation :</b> Windows 7 ; OS X El Capitan (10.11) ; Ubuntu 14.04 ; Fedora
+                            24 ; Debian 8<br>
+                            <b>Architecture :</b> 32 bits (x64, x86, ARM)<br>
+                            <b>Mémoire vive totale :</b> 4 Go<br>
+                            <b>Processeur :</b> Intel Core i3-3210 ; AMD A8-7600 APU ;
+                            équivalent<br>
+                            <b>Carte graphique intégrée au processeur<k style="color: #2E77B0;">*</k> :</b> Intel HD
+                            Graphics 4000 (Ivy Bridge) ; AMD Radeon R5 (Kaveri) + OpenGL 4.4<br>
+                            <b>Carte graphique dédiée<k style="color: #2E77B0;">*</k> :</b> NVIDIA GeForce 400 Series
+                            ; AMD Radeon HD7000 + OpenGL 4.4<br>
+                            <b>Stockage alloué :</b> 700 Mo HDD<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="title-form">
+                    <p class="title"><b><i class="fas fa-desktop"></i> Configuration minimale recommandée</b></p>
+                    <div class="body-form">
+                        <p style="line-height: 25px; margin: 0px;">
+                            <b>Système d'exploitation :</b> Windows 10 ; macOS Big Sur (11.x ou 10.16) ; Ubuntu 20.04 ;
+                            Fedora 33 ; Debian 10<br>
+                            <b>Architecture :</b> 64 bits (x64, x86, ARM)<br>
+                            <b>Mémoire vive totale :</b> 8 Go<br>
+                            <b>Processeur :</b> Intel Core i5-4690 ; AMD
+                            A10-7800 APU ; équivalent<br>
+                            <b>Carte graphique intégrée au processeur<k style="color: #2E77B0;">*</k> :</b><i> Non
+                                recommandé</i><br>
+                            <b>Carte graphique dédiée<k style="color: #2E77B0;">*</k> :</b> NVIDIA GeForce 700 Series
+                            ; AMD Radeon RX 200 (hors puces intégrées) + OpenGL 4.5<br>
+                            <b>Stockage alloué :</b> 1 Go SSD<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="body-form" style="margin-bottom: 20px; margin-left: 20px; margin-right: 20px;">
+                <p style="line-height: 25px; margin: 0px;">
+                    <b>
+                        <k style="color: #2E77B0;">*</k> :
+                    </b> Un processeur peut avoir une carte graphique intégrée.
+                    Celles-ci sont souvent moins performantes qu'unr carte graphique dédiée, mais sont tout de même
+                    acceptables. De plus, il n'est pas necessaire d'avoir une carte graphique intégrée au processeur
+                    pour
+                    jouer sur le serveur.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="./assets/js/scripts_settings.js"></script>
+    <script src="./assets/js/global.js"></script>
+</body>
+
+</html>

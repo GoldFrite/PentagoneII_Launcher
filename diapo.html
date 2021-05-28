@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style_app.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body id="body" class="main" style="background-image: url('./assets/images/bg-01.png'); background-position-y: 15%;">
+
+    <div class="box">
+        <center>
+            <button class="small-button hover-shadow" id="next-diapo"><i class="fas fa-arrow-left"></i></button>
+            <button class="small-button hover-shadow" id="prev-diapo"><i class="fas fa-arrow-right"></i></button><br>
+        </center>
+        <button id="backhome-button" class="small-button hover-shadow" style="margin-top: 10px; width: 100%;"><i
+                class="fas fa-chevron-left"></i>
+            Retour</button>
+    </div>
+
+    <script src="./assets/js/pano.js"></script>
+    <script src="./assets/js/global.js"></script>
+
+    <style>
+        .box {
+            position: fixed;
+            left: +10px;
+            height: 65px;
+            width: 200px;
+            background-color: #272727;
+            border-radius: 10px;
+            padding: 20px;
+            bottom: -10px !important;
+        }
+    </style>
+</body>
+
+</html>

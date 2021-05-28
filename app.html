@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style_app.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+</head>
+
+<body id="body" class="main" style="background-image: url('./assets/images/bg-01.png');">
+    <div id="account-icon" class="account-form">
+        <img class="user-image hover-shadow" src="https://minotar.net/avatar/MHF_steve/50.png" alt="image"
+            id="account-skin" width="50px">
+    </div>
+    <div id="account-infos" class="account-infos-form shadow">
+        <p class="account-name" id="account-pseudo"><b>•••</b></p>
+        <p class="account-mail" id="account-email">•••</p>
+        <button id="account-button" class="small-button hover-shadow" style="margin: 0 0 10px 10px">Voir tout le
+            compte</button>
+        <button id="uuid-button" class="small-button hover-shadow" style="margin: 0 0 10px 10px"
+            title="L'UUID est un identifiant unique associé à chaque compte Minecraft">Voir l'UUID</button>
+        <button id="logout-button" class="small-button-logout hover-shadow">Déconnexion</button>
+        <div id="uuid" class="uuid"></div>
+    </div>
+    <div>
+        <img src="./assets/images/LOGO/PentagoneII-Logo-Blanc.png" alt="image" width="286" height="98px"
+            class="img-logo">
+    </div>
+    <div class="form">
+        <div class="small-form" style="text-align: left;">
+            <div class="game-form">
+                <p class="title-game" style="float: left; margin-bottom: 0;"><b>Status du serveur</b></p>
+                <button class="refresh-button hover-shadow" title="Recharger le status du Serveur" id="status-refresh"
+                    style="margin-left: 104px; margin-top: 0;"><i class="fas fa-sync-alt"></i></button>
+                <div>
+                    <img src="./assets/images/ICON_ROND/PentagoneII-IconLogo-Blanc_RondBleu.png" alt="image"
+                        width="36px" height="36px" style="float: left; padding-right: 15px;">
+                    <div class="body-game">
+                        <p style="margin-bottom: 0px; margin-top: 16px;" id="status"><b>Status :</b> •••</p>
+                        <p style="margin: 0px" id="players"><b>Joueurs :</b> •••</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-form">
+                <p class="title-game"><b>Liens</b></p>
+                <div class="body-game">
+                    <center>
+                        <button id="site-button" class="small-button-site hover-shadow"><i class="fas fa-globe"></i>
+                            Visite notre site Web !</button>
+                        <button id="discord-button" class="small-button-discord hover-shadow"><i
+                                class="fab fa-discord"></i> Rejoins notre Discord !</button>
+                        <button id="twitter-button" class="small-button-twitter hover-shadow"><i
+                                class="fab fa-twitter"></i>
+                            Follow-nous sur Twitter !</button>
+                        <button id="insta-button" class="small-button-insta hover-shadow"><i
+                                class="fab fa-instagram"></i>
+                            Plus sur notre page Instagram !</button>
+                        <button id="yt-button" class="small-button-yt hover-shadow"><i class="fab fa-youtube"></i>
+                            Abonne-toi à notre chaîne YouTube !</button>
+
+                    </center>
+                </div>
+            </div>
+            <!-- <div class="game-form">
+                <p class="title-game"><b>Règlement</b></p>
+                <div class="body-game">
+                    <center>
+                        <button id="rules-button" class="small-button hover-shadow" style="width: 100%;">Lire le
+                            règlement en Jeu</button>
+                    </center>
+                </div>
+            </div> -->
+            <div class="game-form">
+                <p class="title-game"><b>Un problème avec le Launcher</b></p>
+                <button id="help-site-button" class="small-button hover-shadow"
+                    style="margin-bottom: 5px; width: 100%;">Support sur le site de Pentagone II</button>
+                <button id="help-discord-button" class="small-button hover-shadow" style="width: 100%;">Discord du
+                    développeur</button>
+            </div>
+            <div class="game-form">
+                <p class="title-game"><b>Diaporama</b></p>
+                <div class="body-game">
+                    <center>
+                        <button class="diapo-button" id="diapo-1"></button>
+                        <button class="diapo-button" id="diapo-2"></button>
+                        <button class="diapo-button" id="diapo-3"></button><br>
+                        <button class="small-button hover-shadow" id="full-diapo-button" style="width: 100%; margin-top: 5px">Voir le diaporama</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="main-form">
+            <div class="news-form" style="padding-top: 20px">
+                <button id="play-button" style="float: right;" class="button hover-shadow">Jouer</button>
+                <button id="settings-button" class="small-button hover-shadow"
+                    style="margin-right: 5px; position: relative; width: 43px; height: 43px; float: right;"><i
+                        class="fas fa-cog"></i></button>
+                <p class="slogans" id="slogans">“Aux frontières de l'imagination...”</p>
+            </div>
+            <div class="news-form">
+                <p style="font-size: 18px; float: left;"><b>News</b></p>
+                <button class="refresh-button hover-shadow" title="Recharger les News" id="news-refresh"
+                    style="margin-left: 725px;"><i class="fas fa-sync-alt"></i></button>
+                <div id="news">
+                </div>
+                <button class="small-button hover-shadow" style="margin-top: 20px; float: right;"
+                    id="more-news-button">Voir
+                    toutes les news <i class="fas fa-angle-right"></i></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/scripts_app.js"></script>
+    <script src="./assets/js/scripts_news_app.js"></script>
+    <script src="./assets/js/pano_app.js"></script>
+    <script src="./assets/js/global.js"></script>
+</body>
+
+</html>
