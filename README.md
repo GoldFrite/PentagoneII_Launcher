@@ -17,7 +17,7 @@
 
 
 ### Dependencies :
-* Font Awesome (`npm install --save @fortawesome/fontawesome-free `)
+* Font Awesome (`npm install --save @fortawesome/fontawesome-free`)
 * Minecraft Launcher Core (`npm i  minecraft-launcher-core` - [documentation](https://github.com/Pierce01/MinecraftLauncher-core))
 * Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
 * Axios (`npm i axios`)
@@ -51,7 +51,7 @@ This Launcher is under *GNU AGPLv3* licence, so you can fork it for your own pro
 
 
 ### Dépendences :
-* Font Awesome (`npm install --save @fortawesome/fontawesome-free `)
+* Font Awesome (`npm install --save @fortawesome/fontawesome-free`)
 * Minecraft Launcher Core (`npm i  minecraft-launcher-core` - [documentation](https://github.com/Pierce01/MinecraftLauncher-core))
 * Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
 * Axios (`npm i axios`)
