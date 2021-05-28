@@ -2,8 +2,8 @@
 
 <p align="center"><img alt="Pentagone II Launcher" src="https://media.discordapp.net/attachments/762253192255766530/847921594113327164/unknown.png" width="800px"></p>
 
-### [English description](https://github.com/GoldFrite/PentagoneII#en-minecraft-launcher-for-the-modded-server-pentagone-ii-french-server)
-### [Description française](https://github.com/GoldFrite/PentagoneII#fr-launcher-minecraft-pour-le-serveur-modd%C3%A9-pentagone-ii-serveur-fran%C3%A7ais)
+### [English description](#en-minecraft-launcher-for-the-modded-server-pentagone-ii-french-server)
+### [Description française](#fr-launcher-minecraft-pour-le-serveur-modd%C3%A9-pentagone-ii-serveur-fran%C3%A7ais)
 
 ##   
 
