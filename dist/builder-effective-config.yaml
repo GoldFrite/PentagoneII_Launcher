@@ -1,0 +1,10 @@
+directories:
+  output: dist
+  buildResources: build
+appId: fr.pentagone2.launcher
+nsis:
+  allowToChangeInstallationDirectory: false
+  oneClick: true
+  perMachine: true
+icon: build/icon.ico
+electronVersion: 12.0.5

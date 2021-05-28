@@ -1,0 +1,405 @@
+/* COULEUR BLACK DE BASE        : #272727 */
+
+/* COULEUR BLACK- DE BASE       : #363636 */
+
+/* COULEUR BLACK-- DE BASE      : #414141 */
+
+/* COULEUR BLACK BOUTON         : #3D3D3D */
+
+/* COULEUR BLACK- BOUTON        : #535353 */
+
+/* COULEUR RED- LOGOUT BOUTON   : #4A1D1D */
+
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
+* {
+    font-family: "Roboto", sans-serif;
+    outline: 0px;
+}
+
+body {
+    margin: 0px
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.shadow {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hover-shadow:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hover-shadow:hover:active {
+    box-shadow: none;
+}
+
+.user-image {
+    float: right;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+    margin: 10px 10px 0px 0px;
+}
+
+.user-image:hover {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.account-infos-form {
+    font-family: "Roboto", sans-serif;
+    background-color: #272727;
+    width: 332px;
+    position: absolute;
+    border-radius: 5px;
+    color: white;
+    display: none;
+    margin: 10px 0px 0px 10px;
+    right: +10px;
+}
+
+.img-logo {
+    display: block;
+    margin: auto;
+    padding-top: 30px;
+    left: +25px;
+    position: relative;
+}
+
+.account-name {
+    padding-right: 60px;
+    margin: 10px 0px 0px 0px;
+    text-align: right;
+}
+
+.account-mail {
+    padding-right: 60px;
+    margin-top: 0px;
+    font-size: 13px;
+    text-align: right;
+}
+
+a {
+    color: #2E77B0;
+    text-decoration: none;
+    transition: all 0.3s;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+a:hover {
+    color: #2196F3;
+    transition: all 0.3s;
+    background-color: #535353;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+a:hover:active {
+    box-shadow: none;
+}
+
+.form {
+    width: 1200px;
+    padding-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.main-form {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    width: 840px;
+}
+
+.slogans {
+    /* display: inline-block; */
+    float: left;
+    margin: 0 20px 0px 0px;
+    font-style: italic;
+    font-size: 22px;
+    bottom: -8px;
+    position: relative;
+    text-align: left;
+}
+
+.news-form {
+    color: white;
+    border-radius: 10px;
+    background: #272727;
+    width: 800px;
+    margin: auto 0px 20px 0;
+    padding: 0px 20px 20px 20px;
+    display: inline-block;
+    text-align: left;
+}
+
+.small-form {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+}
+
+.refresh-button {
+    margin-top: 16px;
+    border-radius: 100%;
+    height: 26px;
+    width: 28px;
+    background: #3D3D3D;
+    border: 0;
+    color: white;
+    transition: all 0.3s;
+}
+
+.refresh-button:hover {
+    background-color: #535353;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.news-title-form {
+    color: white;
+    border-radius: 10px;
+    background: #363636;
+    padding: 0px;
+}
+
+.news-title {
+    margin: 16px 20px 16px 20px;
+    padding-top: 16px;
+    font-size: 16px;
+}
+
+.news-body-form {
+    color: white;
+    border-radius: 10px;
+    background: #414141;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.news-img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.news-date {
+    padding: 10px;
+    font-size: 12px;
+    margin: 0px;
+    text-align: right;
+}
+
+.game-form {
+    border-radius: 10px;
+    margin-right: 10px;
+    color: white;
+    background: #272727;
+    width: 270px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title-game {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.body-game {
+    font-size: 14px;
+}
+
+.small-button-site {
+    background: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.small-button-site:hover {
+    background-color: #4FCD56;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.small-button-discord {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    margin-top: 5px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.small-button-discord:hover {
+    background-color: #5C6FB1;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.small-button-twitter {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    margin-top: 5px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.small-button-twitter:hover {
+    background-color: #1DA1F2;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.small-button-insta {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    margin-top: 5px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.small-button-insta:hover {
+    background: linear-gradient(to right, #F58529, #FEDA77, #DD2A7B, #8134AF, #515BD4);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.small-button-yt {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    margin-top: 5px;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.small-button-yt:hover {
+    background-color: #FF0000;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.diapo-button {
+    background-color: white;
+    height: 12px;
+    width: 5px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    margin: 0 5px 0 5px;
+}
+
+.diapo-button:hover {
+    background-color: #b4b3b3 !important;
+    cursor: pointer;
+}
+
+.small-button-logout {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: #FF1D1D;
+    margin: 5px auto 10px 10px;
+    transition: all .3s;
+}
+
+.small-button-logout:hover {
+    background-color: #4A1D1D;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.uuid-input {
+    background: #5c5c5c;
+    color: white;
+    height: 21px;
+    width: 247px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #3d3d3d;
+    color: white;
+    margin: 5px 0px 10px 10px;
+    padding: 1px 6px 1px 6px;
+    transition: all 0.3s;
+}
+
+.uuid-copy-button {
+    background: #3D3D3D;
+    height: 25px;
+    border-radius: 0px 5px 5px 0px;
+    border: 0;
+    color: white;
+    margin: 5px 0px 10px 0px;
+    transition: all 0.3s;
+}
+
+.uuid-copy-button:hover {
+    background: #535353;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button {
+    text-transform: uppercase;
+    border-radius: 5px;
+    width: 180px;
+    border: 0;
+    padding: 13px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: #2E77B0;
+}
+
+.button:hover {
+    background: #2196F3;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.small-button {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    transition: all 0.3s;
+}
+
+.small-button:hover {
+    background-color: #535353;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+body {
+    background: white;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+}

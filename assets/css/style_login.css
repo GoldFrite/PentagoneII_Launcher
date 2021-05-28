@@ -1,0 +1,245 @@
+/* COULEUR BLACK DE BASE        : #272727 */
+
+/* COULEUR BLACK- DE BASE       : #363636 */
+
+/* COULEUR BLACK-- DE BASE      : #414141 */
+
+/* COULEUR BLACK BOUTON         : #3D3D3D */
+
+/* COULEUR BLACK- BOUTON        : #535353 */
+
+/* COULEUR RED- LOGOUT BOUTON   : #4A1D1D */
+
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap);
+* {
+    font-family: "Roboto", sans-serif;
+    outline: 0px;
+}
+
+body {
+    margin: 0px
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.img-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+}
+
+.form {
+    border-radius: 10px;
+    color: white;
+    background: #272727;
+    width: 360px;
+    margin: 0 auto;
+    padding: 35px;
+    ;
+}
+
+.login-page {
+    min-width: 1000;
+    min-height: 350;
+    max-width: 1000;
+    max-height: 350;
+    padding-top: 70px;
+}
+
+.input-home {
+    font-family: 'Open Sans', sans-serif;
+    outline: 0;
+    background: #3D3D3D;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid transparent;
+    margin: 0 0 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+    caret-color: white;
+    color: white;
+    transition: all 0.3s;
+}
+
+.input-home:hover {
+    border-width: 1px;
+    border-color: #6d6d6d;
+    transition: all 0.3s;
+}
+
+.input-home:focus {
+    border-width: 1px;
+    border-color: white;
+    transition: all 0.3s;
+}
+
+.eye {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    transition: all 0.3s;
+    position: relative;
+    top: -48px;
+    right: -201px;
+}
+
+.eye:hover {
+    background-color: #535353;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.eye:hover:active {
+    box-shadow: none;
+}
+
+.login-text {
+    size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.buy-text {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
+a {
+    color: #2E77B0;
+    text-decoration: none;
+    transition: all 0.3s;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+a:hover {
+    color: #2196F3;
+    transition: all 0.3s;
+    background-color: #535353;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+a:hover:active {
+    box-shadow: none;
+}
+
+.button {
+    text-transform: uppercase;
+    background: #2E77B0;
+    border-radius: 5px;
+    border: 0;
+    padding: 13px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.button:hover {
+    background: #2196F3;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover:active {
+    box-shadow: none;
+}
+
+.button:disabled {
+    background: #444;
+    cursor: not-allowed;
+}
+
+.small-button {
+    background-color: #3D3D3D;
+    height: 25px;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+    transition: all 0.3s;
+}
+
+.small-button:hover {
+    background-color: #535353;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.small-button:hover:active {
+    box-shadow: none;
+}
+
+body {
+    background: white;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: antialiased;
+}
+
+.error-modal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000004d;
+    z-index: +2;
+}
+
+.form-modal {
+    background-color: #272727;
+    padding: 35px;
+    border-radius: 10px;
+    margin: 150px auto auto auto;
+    width: 500px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 50%);
+    line-height: 25px;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+    float: right;
+    background: none;
+    outline: 0;
+    border: 0;
+    transition: all 0.3s;
+    color: white;
+}
+
+.close-button:hover {
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.close-button:hover:active {
+    text-shadow: none;
+}
+
+.modal-title {
+    size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: left;
+    text-transform: uppercase;
+    color: white;
+}
+
+.error-text {
+    font-size: 14px;
+    margin-bottom: 0px;
+    color: white;
+}
