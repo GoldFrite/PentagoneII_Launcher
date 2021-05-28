@@ -1,0 +1,38 @@
+{
+  "name": "pentagone2launcher",
+  "productName": "Pentagone II Launcher",
+  "version": "1.0.4",
+  "description": "Pentagone II Launcher",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron .",
+    "buildWin": "electron-builder build",
+    "buildMac": "electron-builder build -m",
+    "buildLin": "electron-builder build -l"
+  },
+  "build": {
+    "appId": "fr.pentagone2.launcher",
+    "mac": {
+      "allowToChangeInstallationDirectory": false,
+      "target": "dmg",
+      "oneClick": true,
+      "perMachine": true,
+      "icon": "build/icon.icns",
+      "minimumSystemVersion": "10.11"
+    },
+    "icon": "build/icon.ico"
+  },
+  "author": "Pentagone II",
+  "license": "GNU AGPLv3",
+  "devDependencies": {
+    "electron": "^12.0.5",
+    "electron-builder": "^22.10.5"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "axios": "^0.21.1",
+    "http": "0.0.1-security",
+    "minecraft-launcher-core": "^3.16.2",
+    "minecraft-server-util": "^3.5.1"
+  }
+}
