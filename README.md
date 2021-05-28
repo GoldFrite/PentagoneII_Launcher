@@ -15,7 +15,7 @@
 * Slideshow background
 * Displaying server information
 
-The *package.json* is only for Windows! The macOS version is available [there](dist/macos-package.json).
+The *package.json* is only for Windows! The macOS version is available [there](build/macos-package.json).
 
 This Launcher is based on another Launcher that I created, but this last one is not available on GitHub.
 
@@ -36,7 +36,7 @@ This Launcher is under *GNU AGPLv3* licence, so you can fork it for your own pro
 * Fond d'écran diaporama
 * Affichage des infosmations du serveur
 
-Le *package.json* est uniquement pour Windows ! Pour obtenir la version macOS, cliquez [ici](dist/macos-package.json).
+Le *package.json* est uniquement pour Windows ! Pour obtenir la version macOS, cliquez [ici](build/macos-package.json).
 
 Ce Launcher est basé sur un autre Launcher que j'ai créé, mais ce dernier n'est pas disponible sur GitHub.
 
