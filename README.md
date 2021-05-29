@@ -10,7 +10,7 @@
 ## **[EN]** Minecraft Launcher for the modded server "Pentagone II" (French server)
 
 ### Features :
-* [Azuriom Auth](https://azuriom.com/en)
+* <a href="https://azuriom.com/en" target="_blank">Azuriom Auth</a>
 * Minecraft Forge 1.16
 * Bootstrap
 * Java x64 autodownloading (for Windows)
@@ -44,7 +44,7 @@ This Launcher is under *GNU AGPLv3* licence, so you can fork it for your own pro
 ## [FR] Launcher Minecraft pour le serveur moddé "Pentagone II" (serveur français)
 
 ### Caracteristiques :
-* [Authentification avec Azuriom](https://azuriom.com/fr)
+* <a href="https://azuriom.com/fr" target="_blank">Authentification avec Azuriom</a>
 * Minecraft Forge 1.16
 * Mises à jour automatiques du Launcher
 * Téhéchangement automatique de Java x64 (pour Windows)
