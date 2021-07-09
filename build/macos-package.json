@@ -13,19 +13,15 @@
   "build": {
     "appId": "fr.pentagone2.launcher",
     "mac": {
-      "allowToChangeInstallationDirectory": false,
       "target": "dmg",
-      "oneClick": true,
-      "perMachine": true,
       "icon": "build/icon.icns",
       "minimumSystemVersion": "10.11"
-    },
-    "icon": "build/icon.ico"
+    }
   },
   "author": "Pentagone II",
   "license": "GNU AGPLv3",
   "devDependencies": {
-    "electron": "^12.0.5",
+    "electron": "^12.0.13",
     "electron-builder": "^22.10.5"
   },
   "dependencies": {
