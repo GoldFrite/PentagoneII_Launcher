@@ -28,6 +28,7 @@
 * Axios (`npm i axios`)
 * Request (`npm i request`)
 * HTTP (`npm i http`)
+* Unzipper (`npm i unzipper`)
 
 ### Dev Dependencises :
 * Electron (`npm i -D electron`)
@@ -62,6 +63,7 @@ This Launcher is under *GNU AGPLv3* licence, so you can fork it for your own pro
 * Axios (`npm i axios`)
 * Request (`npm i request`)
 * HTTP (`npm i http`)
+* Unzipper (`npm i unzipper`)
 
 ### Dépendences de dev :
 * Electron (`npm i -D electron`)
