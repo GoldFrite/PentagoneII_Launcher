@@ -52,45 +52,51 @@ ipc.on("data", (event, data) => {
         })
     } catch (error) { }
 
-    fs.access(data.appData + "/.pentagone2/runtime/bin/java.exe", (err) => {
-        if (err) {
+    if (os.platform == "win32") {
 
-            changeDlJava();
+        fs.access(data.appData + "/.pentagone2/runtime/bin/java.exe", (err) => {
+            if (err) {
 
-            download("https://www.dropbox.com/s/262kaub0ra1ma3d/java.zip?dl=1", data.appData + "/.pentagone2/runtime/jre.zip", (err) => {
-                console.log("OK");
-                if (err || isDl == -1) {
-                    loadingText.style.opacity = 0
-                    errorText.style.opacity = 0
-                    progressBar.style.opacity = 0
-                    console.error("%c[Launcher]" + "%c [Java]" + "%c Download failed! " + errorVar, "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
-                    setTimeout(change, 1000)
-                    function change() {
-                        loadingText.innerHTML = "Echec du téléchargement."
-                        errorText.innerHTML = "Impossible de télécharger Java."
-                        loadingText.style.opacity = 1
-                        errorText.style.opacity = 1
-                    }
-                    isDl = -1
-                } else {
-                    loadingText.style.opacity = 0
-                    progressBar.style.opacity = 0
-                    console.log("%c[Launcher]" + "%c [Java]" + "%c Download complete!", "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
-                    setTimeout(change, 1000)
-                    function change() {
-                        loadingText.innerHTML = "Installation de Java"
-                        loadingText.style.opacity = 1
-                        fs.createReadStream(data.appData + '/.pentagone2/runtime/jre.zip')
-                            .pipe(unzipper.Extract({ path: data.appData + "/.pentagone2/runtime/" }, { end: setTimeout(lanuchAndDelete, 10000) }))
-                        function lanuchAndDelete() {
-                            setTimeout(launch, 1000)
-                            fs.unlink(data.appData + "/.pentagone2/runtime/jre.zip", (err) => { })
+                changeDlJava();
+
+                download("https://www.dropbox.com/s/262kaub0ra1ma3d/java.zip?dl=1", data.appData + "/.pentagone2/runtime/jre.zip", (err) => {
+                    console.log("OK");
+                    if (err || isDl == -1) {
+                        loadingText.style.opacity = 0
+                        errorText.style.opacity = 0
+                        progressBar.style.opacity = 0
+                        console.error("%c[Launcher]" + "%c [Java]" + "%c Download failed! " + errorVar, "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
+                        setTimeout(change, 1000)
+                        function change() {
+                            loadingText.innerHTML = "Echec du téléchargement."
+                            errorText.innerHTML = "Impossible de télécharger Java."
+                            loadingText.style.opacity = 1
+                            errorText.style.opacity = 1
+                        }
+                        isDl = -1
+                    } else {
+                        loadingText.style.opacity = 0
+                        progressBar.style.opacity = 0
+                        console.log("%c[Launcher]" + "%c [Java]" + "%c Download complete!", "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
+                        setTimeout(change, 1000)
+                        function change() {
+                            loadingText.innerHTML = "Installation de Java"
+                            loadingText.style.opacity = 1
+                            fs.createReadStream(data.appData + '/.pentagone2/runtime/jre.zip')
+                                .pipe(unzipper.Extract({ path: data.appData + "/.pentagone2/runtime/" }, { end: setTimeout(lanuchAndDelete, 10000) }))
+                            function lanuchAndDelete() {
+                                setTimeout(launch, 1000)
+                                fs.unlink(data.appData + "/.pentagone2/runtime/jre.zip", (err) => { })
+                            }
                         }
                     }
-                }
-            })
-        }
-    })
+                })
+            }
+        })
+
+    } else {
+        launch()
+    }
 
     function download(url, dest, cb) {
         const file = fs.createWriteStream(dest)
