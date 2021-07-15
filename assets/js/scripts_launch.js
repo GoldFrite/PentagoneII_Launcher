@@ -9,18 +9,24 @@ const request = require('request');
 const unzipper = require("unzipper");
 // --------------------
 
-var modpackLink = null
+// Var HTML
 const progressBar = document.getElementById("progress-bar")
 const loadingText = document.getElementById("loading")
 const errorText = document.getElementById("error")
+// --------------------
+
+// Var
+var modpackLink = null
+var fullData
 var xVal = 0
 var isDl = 0
+var errorVar
 let launchOpts
-
 var modpack = {
     method: 'post',
     url: 'http://minecraft-launcher.medianewsonline.com/servers/pentagone2/update/update.json',
 };
+// --------------------
 
 axios(modpack)
     .then(function (response) {
@@ -30,180 +36,92 @@ axios(modpack)
         console.log("%c[Launcher]" + "%c [Updater]" + "%c Unable to load the Modpack ZIP file : " + error, "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
     })
 
-function launch() {
-    launcher.launch(launchOpts)
-    loadingText.style.opacity = "0"
-    setTimeout(change, 1000)
-    function change() {
-        loadingText.innerHTML = "Vérification du Jeu..."
-        loadingText.style.opacity = "1"
-    }
-}
-
 ipc.on("data", (event, data) => {
 
-    try {
-        fs.readdir(data.appData + "/.pentagone2/mods/", (err, files) => {
+    fullData = data
+
+    try { // Suppr le contenu du dossier mods s'il existe
+        fs.readdir(fullData.appData + "/.pentagone2/mods/", (err, files) => {
             try {
                 files.forEach(file => {
-                    fs.unlink(data.appData + "/.pentagone2/mods/" + file, (err) => { });
+                    fs.unlink(fullData.appData + "/.pentagone2/mods/" + file, (err) => { });
                 })
             } catch (error) { }
         })
     } catch (error) { }
 
-    fs.access(data.appData + "/.pentagone2/runtime/bin/java.exe", (err) => {
-        if (err) {
+    try {
+        fs.unlink(fullData.appData + "/.pentagone2/forge.jar", (err) => { })
+    } catch (error) { }
 
-            changeDlJava();
+    if (os.platform == "win32") { // Si l'OS est Win, télécharger JAVA s'il n'existe pas
 
-            download("https://www.dropbox.com/s/262kaub0ra1ma3d/java.zip?dl=1", data.appData + "/.pentagone2/runtime/jre.zip", (err) => {
-                console.log("OK");
-                if (err || isDl == -1) {
-                    loadingText.style.opacity = 0
-                    errorText.style.opacity = 0
-                    progressBar.style.opacity = 0
-                    console.error("%c[Launcher]" + "%c [Java]" + "%c Download failed! " + errorVar, "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
-                    setTimeout(change, 1000)
-                    function change() {
-                        loadingText.innerHTML = "Echec du téléchargement."
-                        errorText.innerHTML = "Impossible de télécharger Java."
-                        loadingText.style.opacity = 1
-                        errorText.style.opacity = 1
-                    }
-                    isDl = -1
-                } else {
-                    loadingText.style.opacity = 0
-                    progressBar.style.opacity = 0
-                    console.log("%c[Launcher]" + "%c [Java]" + "%c Download complete!", "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
-                    setTimeout(change, 1000)
-                    function change() {
-                        loadingText.innerHTML = "Installation de Java"
-                        loadingText.style.opacity = 1
-                        fs.createReadStream(data.appData + '/.pentagone2/runtime/jre.zip')
-                            .pipe(unzipper.Extract({ path: data.appData + "/.pentagone2/runtime/" }, { end: setTimeout(lanuchAndDelete, 10000) }))
-                        function lanuchAndDelete() {
-                            setTimeout(launch, 1000)
-                            fs.unlink(data.appData + "/.pentagone2/runtime/jre.zip", (err) => { })
-                        }
-                    }
-                }
-            })
-        }
-    })
+        fs.access(fullData.appData + "/.pentagone2/runtime/bin/java.exe", (err) => {
 
-    function download(url, dest, cb) {
-        const file = fs.createWriteStream(dest)
-        const sendReq = request.get(url)
-        var weight = null
-        var dl = 0
-        progressBar.style.opacity = 1
-
-        sendReq.on('response', (response) => {
-            if (response.statusCode !== 200) {
-                isDl = -1
-                return cb('Response status was ' + response.statusCode)
-            } else {
-                weight = response.headers['content-length'];
-                progressBar.max = weight
-                response.on("data", (chunk) => {
-                    dl = dl + chunk.length
-                    //console.log("Downloaded: " + dl + " bytes");
-                    progressBar.value = dl
-                })
+            if (err) {
+                changeDlJava();
             }
         })
-        sendReq.on('error', (err) => {
-            cb(err.message)
-            errorVar = err
-            errorText.style.opacity = 1
-            isDl = -1
-            fs.unlink(dest)
-        })
-        file.on('error', (err) => {
-            cb(err.message);
-            errorVar = err
-            errorText.style.opacity = 1
-            isDl = -1
-            fs.unlink(dest)
-        })
-        sendReq.pipe(file)
-        file.on('finish', () => {
-            file.close(cb);
-            console.log(isDl);
-        })
+
+    } else {
+        launch()
     }
 
 
+    if (os.platform == "win32") { // Opts pour Win
 
-    try {
-        fs.unlink(data.appData + "/.pentagone2/forge.jar", (err) => { })
-    } catch (error) { }
-
-    if (os.platform == "win32") {
-
-        launchOpts = {
-            clientPackage: modpackLink,
-            javaPath: data.appData + "/.pentagone2/runtime/bin/java.exe",
-            authorization: Authenticator.getAuth(localStorage.getItem("username")),
-            root: data.appData + "/.pentagone2",
-            removePackage: true,
-            version: {
-                number: "1.16.5",
-                type: "release"
-            },
-            forge: data.appData + "/.pentagone2/forge.jar",
-            memory: {
-                max: localStorage.getItem("maxRamValue"),
-                min: localStorage.getItem("minRamValue")
-            }
-        }
-
-        if (!fs.existsSync(data.appData + "/.pentagone2/")) {
-            fs.mkdirSync(data.appData + "/.pentagone2/", { recursive: true })
-            fs.mkdirSync(data.appData + "/.pentagone2/runtime/", { recursive: true })
+        if (!fs.existsSync(fullData.appData + "/.pentagone2/")) { // Check si JAVA est déja présent
+            fs.mkdirSync(fullData.appData + "/.pentagone2/", { recursive: true })
+            fs.mkdirSync(fullData.appData + "/.pentagone2/runtime/", { recursive: true })
             changeDlJava()
-        } else if (!fs.existsSync(data.appData + "/.pentagone2/runtime")) {
-            fs.mkdirSync(data.appData + "/.pentagone2/runtime/", { recursive: true })
+        } else if (!fs.existsSync(fullData.appData + "/.pentagone2/runtime")) {
+            fs.mkdirSync(fullData.appData + "/.pentagone2/runtime/", { recursive: true })
             changeDlJava()
-        } else if (!fs.existsSync(data.appData + "/.pentagone2/runtime/bin/java.exe")) {
+        } else if (!fs.existsSync(fullData.appData + "/.pentagone2/runtime/bin/java.exe")) {
             changeDlJava()
         } else {
             setTimeout(launch, 1000)
         }
-    } else {
 
-        launchOpts = {
-            clientPackage: modpackLink,
+        launchOpts = { //////////////////////////////
+            javaPath: fullData.appData + "/.pentagone2/runtime/bin/java.exe",
             authorization: Authenticator.getAuth(localStorage.getItem("username")),
-            root: data.appData + "/.pentagone2",
+            root: fullData.appData + "/.pentagone2",
             removePackage: true,
             version: {
-                number: "1.16.5",
+                number: "1.7.10",
                 type: "release"
             },
-            forge: data.appData + "/.pentagone2/forge.jar",
+            forge: fullData.appData + "/.pentagone2/forge.jar",
             memory: {
                 max: localStorage.getItem("maxRamValue"),
                 min: localStorage.getItem("minRamValue")
             }
         }
 
+    } else { // Opts pour macOS
 
-    }
-
-    function changeDlJava() {
-        setTimeout(change, 1000)
-        function change() {
-            loadingText.innerHTML = "Téléchargement de Java"
-            loadingText.style.opacity = 1
-            errorText.style.opacity = 0
+        launchOpts = { //////////////////////////////
+            authorization: Authenticator.getAuth(localStorage.getItem("username")),
+            root: fullData.appData + "/.pentagone2",
+            removePackage: true,
+            version: {
+                number: "1.7.10",
+                type: "release"
+            },
+            forge: fullData.appData + "/.pentagone2/forge.jar",
+            memory: {
+                max: localStorage.getItem("maxRamValue"),
+                min: localStorage.getItem("minRamValue")
+            }
         }
+
     }
 
     launcher.on("debug", (e) => {
+
         console.log(e)
-        if (e.includes("[MCLC]: Launching with arguments")) {
+        if (e.includes("[MCLC]: Launching with arguments")) { // Ce message indique que le jeu est télécharge, je change donc l'apparence du HTML
             loadingText.style.opacity = "0"
             progressBar.style.opacity = "0"
             setTimeout(change, 1000)
@@ -212,7 +130,8 @@ ipc.on("data", (event, data) => {
                 loadingText.style.opacity = "1"
             }
         }
-        if (!e.includes("[MCLC]: Downloaded assets") && e.includes("[MCLC]: Attempting to download assets")) {
+
+        if (!e.includes("[MCLC]: Downloaded assets") && e.includes("[MCLC]: Attempting to download assets")) { // Ces messages indiquent que le jeu n'est pas déja téléchargé, donc je change l'apparence du HTML
             loadingText.style.opacity = "0"
             progressBar.style.opacity = "0"
             setTimeout(change, 1000)
@@ -230,6 +149,7 @@ ipc.on("data", (event, data) => {
             })
         }
     })
+
     launcher.on("data", (e) => {
         console.log(e)
 
@@ -241,6 +161,7 @@ ipc.on("data", (event, data) => {
             }
         }
     })
+
     launcher.on("progress", (e) => {
         console.log(e)
         progressBar.value = "0"
@@ -253,3 +174,153 @@ ipc.on("data", (event, data) => {
     })
 
 })
+
+// Apparence HTML
+function launch() {
+
+    loadingText.style.opacity = "0"
+    progressBar.style.opacity = "0"
+    setTimeout(change, 1000)
+    function change() {
+        loadingText.innerHTML = "Téléchargement du Jeu..."
+        loadingText.style.opacity = "1"
+        progressBar.style.opacity = "1"
+        progressBar.value = "0"
+    }
+
+    download(modpackLink, fullData.appData + "/.pentagone2/ModPack.zip", (err) => {
+
+        if (err || isDl == -1) {
+
+            loadingText.style.opacity = 0
+            errorText.style.opacity = 0
+            progressBar.style.opacity = 0
+            console.error("%c[Launcher]" + "%c [ModPack]" + "%c Download failed! " + errorVar, "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
+            setTimeout(change, 1000)
+            function change() {
+                loadingText.innerHTML = "Echec du téléchargement."
+                errorText.innerHTML = "Impossible de télécharger le ModPack."
+                loadingText.style.opacity = 1
+                errorText.style.opacity = 1
+            }
+            isDl = -1
+
+        } else {
+
+            progressBar.style.opacity = 0
+            console.log("%c[Launcher]" + "%c [ModPack]" + "%c Download complete!", "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
+            setTimeout(change, 1000)
+            function change() {
+                loadingText.style.opacity = 1
+                fs.createReadStream(fullData.appData + '/.pentagone2/ModPack.zip')
+                    .pipe(unzipper.Extract({ path: fullData.appData + "/.pentagone2/" }, { end: setTimeout(lanuchOkAndDelete, 10000) }))
+                function lanuchOkAndDelete() {
+                    setTimeout(launchOk, 2500)
+                    fs.unlink(fullData.appData + "/.pentagone2/ModPack.zip", (err) => { })
+                }
+            }
+            isDl = 0
+        }
+    })
+
+    function launchOk() {
+        launcher.launch(launchOpts)
+        loadingText.style.opacity = "0"
+        setTimeout(change, 1000)
+        function change() {
+            loadingText.innerHTML = "Vérification du Jeu..."
+            loadingText.style.opacity = "1"
+        }
+    }
+
+
+}
+
+function changeDlJava() {
+    setTimeout(change, 1000)
+    function change() {
+        loadingText.innerHTML = "Téléchargement de Java"
+        loadingText.style.opacity = 1
+        errorText.style.opacity = 0
+    }
+
+    download("https://www.dropbox.com/s/262kaub0ra1ma3d/java.zip?dl=1", fullData.appData + "/.pentagone2/runtime/jre.zip", (err) => {
+
+        if (err || isDl == -1) {
+
+            loadingText.style.opacity = 0
+            errorText.style.opacity = 0
+            progressBar.style.opacity = 0
+            console.error("%c[Launcher]" + "%c [Java]" + "%c Download failed! " + errorVar, "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
+            setTimeout(change, 1000)
+            function change() {
+                loadingText.innerHTML = "Echec du téléchargement."
+                errorText.innerHTML = "Impossible de télécharger Java."
+                loadingText.style.opacity = 1
+                errorText.style.opacity = 1
+            }
+            isDl = -1
+
+        } else {
+
+            loadingText.style.opacity = 0
+            progressBar.style.opacity = 0
+            console.log("%c[Launcher]" + "%c [Java]" + "%c Download complete!", "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100");
+            setTimeout(change, 1000)
+            function change() {
+                loadingText.innerHTML = "Installation de Java"
+                loadingText.style.opacity = 1
+                fs.createReadStream(fullData.appData + '/.pentagone2/runtime/jre.zip')
+                    .pipe(unzipper.Extract({ path: fullData.appData + "/.pentagone2/runtime/" }, { end: setTimeout(lanuchAndDelete, 10000) }))
+                function lanuchAndDelete() {
+                    setTimeout(launch, 1750)
+                    fs.unlink(fullData.appData + "/.pentagone2/runtime/jre.zip", (err) => { })
+                }
+            }
+            isDl = 0
+        }
+    })
+}
+// --------------------
+
+// Télécharger
+function download(url, dest, cb) {
+
+    const file = fs.createWriteStream(dest)
+    const sendReq = request.get(url)
+    var weight = null
+    var dl = 0
+    progressBar.style.opacity = 1
+
+    sendReq.on('response', (response) => {
+        if (response.statusCode !== 200) {
+            isDl = -1
+        } else {
+            weight = response.headers['content-length'];
+            progressBar.max = weight
+            response.on("data", (chunk) => {
+                dl = dl + chunk.length
+                progressBar.value = dl
+            })
+        }
+    })
+    sendReq.on('error', (err) => {
+        cb(err.message)
+        errorVar = err
+        errorText.style.opacity = 1
+        isDl = -1
+        fs.unlink(dest)
+    })
+    file.on('error', (err) => {
+        cb(err.message);
+        errorVar = err
+        errorText.style.opacity = 1
+        isDl = -1
+        fs.unlink(dest)
+    })
+    sendReq.pipe(file)
+    file.on('finish', () => {
+        file.close(cb);
+    })
+
+}
