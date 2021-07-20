@@ -79,7 +79,7 @@ The *package.json* is only for Windows! The macOS version is available [there](b
 
 This Launcher is based on another Launcher that I created, but this last one is not available on GitHub.
 
-This Launcher is under *GNU AGPLv3* licence, so you can clone it for your own project. For more informations, please check the *LICENCE* file.
+This Launcher is under *GNU AGPLv3* licence, so you can clone it for your own project. For more informations, please check the *LICENSE* file.
 
 ---
 
@@ -138,4 +138,4 @@ Le *package.json* est uniquement pour Windows ! Pour obtenir la version macOS, c
 
 Ce Launcher est basé sur un autre Launcher que j'ai créé, mais ce dernier n'est pas disponible sur GitHub.
 
-Ce Launcher est sous licence *GNU AGPLv3*. Vous pouvez donc cloner ce Launcher pour créer le votre. Pour plus d'informations, veuillez lire le fichier *LICENCE*.
+Ce Launcher est sous licence *GNU AGPLv3*. Vous pouvez donc cloner ce Launcher pour créer le votre. Pour plus d'informations, veuillez lire le fichier *LICENSE*.
