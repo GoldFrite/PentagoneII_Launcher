@@ -15,7 +15,7 @@
 
 ## <span id="platforms">Platform compatibility • Compatibilité des plateformes</span>
 
-| OS (platform) • Système d'exploitation (plateforme) | Supported? • Supportée ?            | Minimum version supported • Version minimale supportée  |
+| OS (platform) • Système d'exploitation (plateforme) | Supported? • Supporté ?            | Minimum version supported • Version minimale supportée  |
 |-----------------------------------------------------|-------------------------------------|---------------------------------------------------------|
 | Windows (win32)                                     | Yes • Oui                           | Windows 7 (Windows NT 6.1)                              |
 | macOS (Darwin)                                      | Yes • Oui                           | macOS El Capitan (10.11)                                |
