@@ -1,5 +1,5 @@
 // Importations
-const shell = require("electron");
+const { shell } = require("electron");
 const ipc = require("electron").ipcRenderer;
 const util = require('minecraft-server-util');
 // --------------------
