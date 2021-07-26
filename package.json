@@ -1,7 +1,7 @@
 {
   "name": "pentagone2launcher",
   "productName": "Pentagone II Launcher",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Pentagone II Launcher",
   "main": "index.js",
   "scripts": {
