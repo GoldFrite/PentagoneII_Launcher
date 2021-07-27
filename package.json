@@ -34,7 +34,6 @@
     "@fortawesome/fontawesome-free": "^5.15.3",
     "axios": "^0.21.1",
     "decompress": "^4.2.1",
-    "http": "0.0.1-security",
     "minecraft-launcher-core": "^3.16.2",
     "minecraft-server-util": "^3.5.1",
     "nodejs-file-downloader": "^4.7.1"
