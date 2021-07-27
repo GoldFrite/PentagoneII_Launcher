@@ -42,9 +42,8 @@
 * Minecraft Launcher Core (`npm i  minecraft-launcher-core` - [documentation](https://github.com/Pierce01/MinecraftLauncher-core))
 * Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
 * Axios (`npm i axios`)
-* Request (`npm i request`)
-* HTTP (`npm i http`) (soon removed)
-* Unzipper (`npm i unzipper`) (soon removed)
+* NodeJS File Downloader (`npm i nodejs-file-downloader`) (instead of _HTTP_ and _Request_)
+* Decompress (`npm i decompress`) (instead of _Unzipper_)
 
 ### Dev Dependencises :
 * Electron (`npm i -D electron`)
@@ -100,8 +99,8 @@ This Launcher is under *GNU AGPLv3* licence, so you can clone it for your own pr
 * Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
 * Axios (`npm i axios`)
 * Request (`npm i request`)
-* HTTP (`npm i http`) (bientôt supprimée)
-* Unzipper (`npm i unzipper`) (bientôt supprimée)
+* NodeJS File Downloader (`npm i nodejs-file-downloader`) (à la place de _HTTP_ et _Request_)
+* Decompress (`npm i decompress`) (à la place de _Unzipper_)
 
 ### Dépendances de dev :
 * Electron (`npm i -D electron`)
