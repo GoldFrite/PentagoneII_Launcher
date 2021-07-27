@@ -98,7 +98,6 @@ This Launcher is under *GNU AGPLv3* licence, so you can clone it for your own pr
 * Minecraft Launcher Core (`npm i  minecraft-launcher-core` - [documentation](https://github.com/Pierce01/MinecraftLauncher-core))
 * Minecraft Server util (`npm i minecraft-server-util` - [documentation](https://github.com/PassTheMayo/minecraft-server-util))
 * Axios (`npm i axios`)
-* Request (`npm i request`)
 * NodeJS File Downloader (`npm i nodejs-file-downloader`) (à la place de _HTTP_ et _Request_)
 * Decompress (`npm i decompress`) (à la place de _Unzipper_)
 
