@@ -91,7 +91,7 @@ This Launcher is under *GNU AGPLv3* licence, so you can clone it for your own pr
 * Paramètres (RAM at Action du Launcher après le lancement du Jeu)
 * Liens réseaux sociaux
 * Fond d'écran diaporama
-* Affichage des infosmations du serveur
+* Affichage des informations du serveur
 
 ### Dépendances :
 * Font Awesome (`npm install --save @fortawesome/fontawesome-free`)
