@@ -30,6 +30,11 @@ var modpack = {
 };
 // --------------------
 
+if (!localStorage.getItem("minRamValue") || !localStorage.getItem("maxRamValue")) {
+    localStorage.setItem("minRamValue", "2000")
+    localStorage.setItem("maxRamValue", "3000")
+}
+
 axios(modpack)
     .then(function (response) {
         modpackLink = response.data.game
