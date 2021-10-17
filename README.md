@@ -22,9 +22,9 @@
 | Linux (including Chrome OS • incluant Chrome OS)    | Not officially • Pas officiellement | -                                                       |
 | Others • Autres                                     | Not officially • Pas officiellement | -                                                       |
 
-The code for this launcher may not be up to date. You can request the latest version at https://undercrafts.eu.
+The code for this launcher may not be up to date. You can request the latest version at [problem with the Website].
 
-Le code de ce Launcher n'est peut être pas à jour. Vous pouvez demander la dernière version sur https://endercrafts.eu.
+Le code de ce Launcher n'est peut être pas à jour. Vous pouvez demander la dernière version sur [problème avec le site Web].
 
 ---
 
