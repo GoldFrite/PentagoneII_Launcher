@@ -26,7 +26,7 @@ var xVal = 0
 let launchOpts
 var modpack = {
     method: 'post',
-    url: 'http://minecraft-launcher.medianewsonline.com/servers/' + smallName + '/update/update.json',
+    url: 'http://minecraft-launcher.ml/servers/' + smallName + '/update/update.json',
 };
 // --------------------
 
@@ -107,6 +107,8 @@ ipc.on("data", (event, data) => {
         }
 
     } else { // Opts pour macOS
+
+        setTimeout(launch, 3000)
 
         launchOpts = {
             authorization: Authenticator.getAuth(localStorage.getItem("aToken"), localStorage.getItem("cToken")),

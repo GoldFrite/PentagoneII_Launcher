@@ -57,7 +57,7 @@ setTimeout(internetCo, 200)
 
 var check = {
     method: 'post',
-    url: 'http://minecraft-launcher.medianewsonline.com/servers/' + smallName + '/update/update.json',
+    url: 'http://minecraft-launcher.ml/servers/' + smallName + '/update/update.json',
 };
 
 async function internetCo() {
@@ -174,7 +174,7 @@ async function index() { // Si le Launcher est à Jour
     if (localStorage.getItem("accessToken")) {
 
         var loginToken = {
-            url: "https://www.pentagone2.hostim.me/api/auth/verify",
+            url: "https://pentagone2.fr/api/auth/verify",
             method: "POST",
             timeout: 0,
             data: {

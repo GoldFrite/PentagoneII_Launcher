@@ -17,7 +17,7 @@ let news = document.getElementById("news")
 
 var config = {
     method: 'post',
-    url: 'http://minecraft-launcher.medianewsonline.com/servers/pentagone2/news/news.json',
+    url: 'http://minecraft-launcher.ml/servers/pentagone2/news/news.json',
     headers: {},
 };
 

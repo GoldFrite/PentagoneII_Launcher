@@ -1,22 +1,12 @@
 let axiosx = require('axios');
 const { memoryUsage } = require('process');
-let appVersionx = null
-let appAuthor = null
-let appName = null
-let appLicense = null
+const packageGlobal = require("./package.json")
 
-var vInfos = {
-    method: 'post',
-    url: 'package.json',
-};
-
-axiosx(vInfos)
-    .then(function (response) {
-        appVersionx = response.data.version
-        appAuthor = response.data.author
-        appName = response.data.name + " (" + response.data.productName + ")"
-        appLicense = response.data.license
-    })
+let appVersionx = packageGlobal.version
+let appAuthor = packageGlobal.author
+let appName = packageGlobal.name + " (" + packageGlobal.productName + ")"
+let appLicense = packageGlobal.license
+let internalVersion = packageGlobal.internalVersion
 
 // Commande d'aide
 function help() {
@@ -25,7 +15,9 @@ function help() {
 
         " - help()\n     Affiche la ligne des commandes disponibles.\n\n" +
 
-        " - infos()\n     Affiche les informations concernant le Launcher et l'appareil.\n\n", "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100")
+        " - infos()\n     Affiche les informations concernant le Launcher et l'appareil.\n\n",
+        
+        "color: blue; font-weight: 1000", "color: black; font-weight: 700", "color: black; font-weight: 100")
 
 }
 function cmd() {
@@ -43,6 +35,8 @@ function infos() {
         " Nom du Launcher : " + appName + "\n\n" +
 
         " Version du Launcher : " + appVersionx + "\n\n" +
+
+        " Version interne du Launcher : " + internalVersion + "\n\n" +
 
         " Auteur du Launcher : " + appAuthor + "\n\n" +
 

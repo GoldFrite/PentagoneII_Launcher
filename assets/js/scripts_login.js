@@ -32,7 +32,7 @@ loginButton.addEventListener("click", () => {
 function login() {
 
     var login = {
-        url: "https://www.pentagone2.hostim.me/api/auth/authenticate",
+        url: "https://pentagone2.fr/api/auth/authenticate",
         method: "POST",
         timeout: 0,
         data: {
@@ -119,11 +119,11 @@ eyeButton.addEventListener("click", () => {
 // Ouverture liens
 const buyButton = document.getElementById('buy-button');
 buyButton.addEventListener('click', () => {
-    shell.openExternal("https://www.pentagone2.hostim.me/user/register");
+    shell.openExternal("https://pentagone2.fr/user/register");
 })
 
 const fpwLink = document.getElementById('fpw-link');
 fpwLink.addEventListener('click', () => {
-    shell.openExternal("https://www.pentagone2.hostim.me/user/password/reset");
+    shell.openExternal("https://pentagone2.fr/user/password/reset");
 })
 // --------------------

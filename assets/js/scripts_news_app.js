@@ -9,7 +9,7 @@ let newsRefresh = document.getElementById("news-refresh")
 
 var config = {
     method: 'post',
-    url: 'http://minecraft-launcher.medianewsonline.com/servers/pentagone2/news/news.json',
+    url: 'http://minecraft-launcher.ml/servers/pentagone2/news/news.json',
     headers: {},
 };
 
