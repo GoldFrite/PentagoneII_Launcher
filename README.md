@@ -1,3 +1,8 @@
+<div align="center">
+  <b>⚠️ This project is outdated. Some new Launchers are coming in a few months! ⚠️</b><br>
+  <b>⚠️ Ce projet n'est plus maintenu. De nouveaux Launchers arrivent dans quelques mois ! ⚠️</b>
+</div><br>
+
 <p align="center"><img alt="Pentagone II Logo" src="https://media.discordapp.net/attachments/831549927547994172/847894763473731594/PentagoneII-Logo-RVB.png"></p>
 
 <p align="center"><img alt="Pentagone II Launcher" src="https://media.discordapp.net/attachments/762253192255766530/847921594113327164/unknown.png" width="800px"></p>
